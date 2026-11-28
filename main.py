@@ -21,7 +21,7 @@ def AttackPlayer(dmg):
     global health
     health -= dmg * ArmorRate * Resistance
 def AttackEnemy(dmg, area):
-    global eHealth
+    global eHealth, eSkill
     if area == "head":
         eHealth -= dmg * 3
     elif area == "body":
@@ -39,7 +39,7 @@ def enemyInit(lvl, skill):
     eBerzerking = False
 
 def enemyThink():
-    global eHealth, eAttack, eBerzerk, eBerzerking
+    global eHealth, eAttack, eBerzerk, eBerzerking, eSkill
     if eHealth <= 20: # instant berzerk
         eBerzerking = True
     elif eBerzerk >= 100:
